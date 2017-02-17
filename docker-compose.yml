@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - ./planet/planet.ini:/planet/planet.ini:ro
+      - ./planet/theme:/planet/theme
+    ports:
+      - 127.0.0.1:80:80
