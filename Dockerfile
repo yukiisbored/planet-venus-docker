@@ -13,11 +13,13 @@ RUN apt-get install -y cron planet-venus lighttpd
 ADD update-page.sh /usr/bin/update-page
 
 # Add crontab
-ADD crontab /etc/cron.d/autoupdate
+ADD crontab /autoupdate-cron
 
-# Grant execution rights to cron job and update script
-RUN chmod 0644 /etc/cron.d/autoupdate && \
-    chmod 0755 /usr/bin/update-page
+# Add crontab to root's crontab
+RUN crontab autoupdate-cron
+
+# Grant execution rights to update script
+RUN chmod 0755 /usr/bin/update-page
 
 # Create a basic planet
 RUN planet --create planet
