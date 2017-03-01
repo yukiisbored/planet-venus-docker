@@ -1,3 +1,3 @@
-# m h dom mon dow user	command
-30 * * * * root update-page >> /var/log/update-pages.log
+# m h dom mon dow command
+30 * * * * update-page >> /var/log/update-pages.log
 
