@@ -28,12 +28,11 @@ RUN chmod +x /usr/bin/update-page && \
     chmod +x /etc/service/lighttpd/run && \
     chmod +x /etc/my_init.d/update-page.sh
 
+# Use config file for lighttpd
+ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
+
 # Create a basic planet
 RUN planet --create planet
-
-# Link http root into planet folder
-RUN rm -rf /var/www/html && \
-    ln -s /planet/output /var/www/html
 
 # Make planet folder into a volume
 VOLUME /planet
