@@ -6,21 +6,21 @@ ENV DEBIAN_FRONTEND=noninteractive TERM=dumb
 # Use the init system
 CMD /sbin/my_init
 
-# Update repository
-RUN apt-get update
-
 # Install planet-venus and lighttpd
-RUN apt-get install -y planet-venus lighttpd
+RUN apt-get update && \
+    apt-get install -y planet-venus lighttpd
 
 # Add update script
 ADD update-page.sh /usr/bin/update-page
 
+# Add required folders for service and one-shot
+RUN mkdir -p /etc/service/lighttpd && \
+    mkdir -p /etc/my_init.d
+
 # Add lighttpd service
-RUN mkdir -p /etc/service/lighttpd
 ADD sv/lighttpd.sh /etc/service/lighttpd/run
 
 # Add update-page one-shot
-RUN mkdir -p /etc/my_init.d
 ADD one-shot/update-page.sh /etc/my_init.d/update-page.sh
 
 # Add crontab
