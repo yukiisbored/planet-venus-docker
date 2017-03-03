@@ -8,7 +8,7 @@ CMD /sbin/my_init
 
 # Install planet-venus and lighttpd
 RUN apt-get update && \
-    apt-get install -y planet-venus lighttpd
+    apt-get install -y --no-install-recommends planet-venus lighttpd
 
 # Add update script
 ADD update-page.sh /usr/bin/update-page
