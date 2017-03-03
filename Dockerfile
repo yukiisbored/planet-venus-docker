@@ -30,9 +30,9 @@ ADD crontab /autoupdate-cron
 RUN crontab autoupdate-cron
 
 # Grant execution rights to scripts and services
-RUN chmod 0755 /usr/bin/update-page && \
-    chmod 0755 /etc/service/lighttpd/run && \
-    chmod 0755 /etc/my_init.d/update-page.sh
+RUN chmod +x /usr/bin/update-page && \
+    chmod +x /etc/service/lighttpd/run && \
+    chmod +x /etc/my_init.d/update-page.sh
 
 # Create a basic planet
 RUN planet --create planet
