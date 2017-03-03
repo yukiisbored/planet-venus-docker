@@ -6,6 +6,5 @@ services:
       - ./planet/planet.ini:/planet/planet.ini:ro
       - ./planet/theme:/planet/theme
       - ./crontab:/etc/crontab:ro
-      - ./lighttpd.conf:/etc/lighttpd/lighttpd.conf:ro
     ports:
       - 127.0.0.1:80:80
