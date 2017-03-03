@@ -13,11 +13,8 @@ RUN apt-get update && \
 # Add update script
 ADD update-page.sh /usr/bin/update-page
 
-# Add required folders for service and one-shot
-RUN mkdir -p /etc/service/lighttpd && \
-    mkdir -p /etc/my_init.d
-
 # Add lighttpd service
+RUN mkdir -p /etc/service/lighttpd
 ADD sv/lighttpd.sh /etc/service/lighttpd/run
 
 # Add update-page one-shot
