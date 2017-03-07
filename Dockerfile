@@ -21,7 +21,7 @@ ADD sv/lighttpd.sh /etc/service/lighttpd/run
 ADD one-shot/update-page.sh /etc/my_init.d/update-page.sh
 
 # Add crontab
-ADD crontab /etc/cron/crontab
+ADD crontab /etc/crontab
 
 # Grant execution rights to scripts and services
 RUN chmod +x /usr/bin/update-page && \
