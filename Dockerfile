@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.22
-MAINTAINER Kaisar Arkhan (Yuki) <ykno@protonmail.com>
+MAINTAINER Muhammad Kaisar Arkhan <yuki@coala.io>
 
 ENV DEBIAN_FRONTEND=noninteractive TERM=dumb
 
