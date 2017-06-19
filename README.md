@@ -39,6 +39,7 @@ If you prefer using external volumes, you can defined volumes for your planet
 configuration with Compose or the docker command directly:
 
 **docker-compose.yml**
+
 ```yaml
 version: '2'
 services:
@@ -49,12 +50,14 @@ services:
 ```
 
 **`docker` command**
+
 `docker run -v ./my-awesome-planet:/planet yukiisbored/planet-venus`
 
 If you're using another directory, You can use the `PLANET_DIRECTORY`,
 `PLANET_CONFIG_FILE`, and `PLANET_OUTPUT` environment variables:
 
 **docker-compose.yml**
+
 ```yaml
 version: '2'
 services:
