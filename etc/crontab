@@ -2,6 +2,4 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # m h dom mon dow user command
-0   * *   *   *   root update-page 2>&1 | logger
-30  * *   *   *   root update-page 2>&1 | logger
-
+*/30   * *   *   *   root update-page 2>&1 | logger

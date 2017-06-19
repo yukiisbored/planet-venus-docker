@@ -1,13 +1,6 @@
 version: '2'
 services:
   web:
-    # If you're going to use this configuration without cloning the whole repo
-    # Replace the build line below with `image: yukiisbored/planet-venus`
     build: .
-    volumes:
-      - ./planet/planet.ini:/planet/planet.ini:ro
-      - ./planet/theme:/planet/theme
-      # If you don't want to modify the default crontab, just remove the line below
-      - ./crontab:/etc/crontab:ro
     ports:
       - 127.0.0.1:80:80
