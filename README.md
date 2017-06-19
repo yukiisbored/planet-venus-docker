@@ -70,3 +70,13 @@ services:
       - PLANET_CONFIG_FILE=/my-awesome-planet/config.ini
       - PLANET_OUTPUT=/my-awesome-planet/output
 ```
+
+**`docker` command**
+
+```
+docker run -v ./my-awesome-planet:/my-awesome-planet \
+           -e PLANET_DIRECTORY=/my-awesome-planet \
+           -e PLANET_CONFIG_FILE=/my-awesome-planet/config.ini \
+           -e PLANET_OUTPUT=/my-awesome-planet/output \
+           yukiisbored/planet-venus
+```
