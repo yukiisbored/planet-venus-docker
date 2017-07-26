@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive TERM=dumb \
     PLANET_OUTPUT=/planet/output
 
 LABEL NAME=planet-venus \
-      IMAGE_VERSION=1.0.0
+      IMAGE_VERSION=1.0.1
 
 # Use the init system
 CMD /sbin/my_init
